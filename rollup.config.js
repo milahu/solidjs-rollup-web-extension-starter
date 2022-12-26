@@ -9,10 +9,11 @@ import {
   simpleReloader,
 } from "rollup-plugin-chrome-extension";
 import { emptyDir } from "rollup-plugin-empty-dir";
+import withSolid from "rollup-preset-solid";
 
 const production = !process.env.ROLLUP_WATCH;
 
-export default {
+export default withSolid({
   input: "src/manifest.json",
   output: {
     dir: "dist",
@@ -21,7 +22,8 @@ export default {
   plugins: [
     // always put chromeExtension() before other plugins
     chromeExtension(),
-    simpleReloader(),
+    simpleReloader(), // TODO? https://github.com/solidjs/solid-refresh
+    /*
     svelte({
       compilerOptions: {
         // enable run-time checks when not in production
@@ -35,6 +37,7 @@ export default {
     }),
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     commonjs(),
+    */
     // Empties the output dir before a new build
     emptyDir(),
     // If we're building for production, minify
@@ -42,4 +45,4 @@ export default {
     // Outputs a zip file in ./releases
     production && zip({ dir: "releases" }),
   ],
-};
+});

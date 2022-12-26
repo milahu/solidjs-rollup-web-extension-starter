@@ -1,7 +1,9 @@
-<script>
-  import Counter from "./Counter.svelte";
-</script>
+import {Counter} from "./Counter";
 
-<main class="p-2">
-  <Counter />
-</main>
+export function Popup() {
+  return (
+    <main class="p-2">
+      <Counter />
+    </main>
+  )
+}
