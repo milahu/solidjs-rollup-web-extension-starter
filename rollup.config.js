@@ -45,4 +45,7 @@ export default withSolid({
     // Outputs a zip file in ./releases
     production && zip({ dir: "releases" }),
   ],
+  watch: {
+    clearScreen: false,
+  }
 });
