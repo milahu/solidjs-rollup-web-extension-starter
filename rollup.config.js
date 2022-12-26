@@ -1,35 +1,8 @@
 import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
+//import commonjs from "@rollup/plugin-commonjs";
 import zip from "rollup-plugin-zip";
 import WindiCSS from "rollup-plugin-windicss";
-
-// [!] (plugin import-css) TypeError: Cannot read properties of null (reading 'importedIds')
-//import css from "rollup-plugin-import-css";
-
-// [!] TypeError: Cannot read properties of undefined (reading 'file')
-/*
-import css from "rollup-plugin-hot-css";
-const cssOptions = {
-  file: "index.css",
-}
-*/
-
-// no effect
-import css from "rollup-plugin-css-only";
-const cssOptions = {}
-
-// [!] (plugin styles) Error: EACCES: permission denied, open '/.config/postcssrc'
-// PostCSS configuration files will be found and loaded automatically, but this behavior is configurable using config option.
-/*
-import css from "rollup-plugin-styles";
-const cssOptions = {
-  modules: true,
-  config: {
-    path: "",
-  },
-}
-*/
-
+import postcss from "rollup-plugin-postcss";
 import terser from "@rollup/plugin-terser";
 import {
   chromeExtension,
@@ -38,7 +11,6 @@ import {
 import { emptyDir } from "rollup-plugin-empty-dir";
 //import withSolid from "rollup-preset-solid";
 import { babel } from "@rollup/plugin-babel";
-
 // ExperimentalWarning: Importing JSON modules is an experimental feature.
 //import pkg from "./package.json" assert { type: "json" };
 import fs from "fs";
@@ -54,7 +26,7 @@ const babelTargets = pkg.browserslist || "last 2 years";
 const babelOptions = {
   plugins: [
     // windicss + styled-components
-    "babel-plugin-styled-windicss",
+    //"babel-plugin-styled-windicss",
   ]
 };
 
@@ -72,7 +44,18 @@ export default ({
     chromeExtension(),
     // TODO? https://github.com/solidjs/solid-refresh
     simpleReloader(),
-    // solidjs
+    // virtual:windi.css -> chunk id /@windicss/windi.css
+    WindiCSS({
+      //preflight: false, // normalize default styles
+      // scan js/ts files to find css class names
+      scan: {
+        dirs: [
+          'src/pages/',
+        ],
+        fileExtensions: ['html', 'js', 'ts', 'jsx', 'tsx']
+      },
+    }),
+    // solidjs: jsx to js
     babel({
       extensions,
       babelHelpers: "bundled",
@@ -92,21 +75,20 @@ export default ({
       },
     }),
     */
-    // virtual:windi.css
-    WindiCSS({
-      preflight: false,
+    // inject css chunks into html
+    postcss({
+      //inject: { insertAt: 'top' },
     }),
-    css(cssOptions),
-    // the plugins below are optional
+    // import "./file" -> import "./file.jsx"
     resolve({
       extensions,
       dedupe: [
         //"svelte"
       ],
     }),
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    commonjs(),
-    // Empties the output dir before a new build
+    // cjs to esm
+    //commonjs(),
+    // Empty the output dir before a new build
     emptyDir(),
     // If we're building for production, minify
     production && terser(),
