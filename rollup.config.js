@@ -71,7 +71,7 @@ export default ({
     // always put chromeExtension() before other plugins
     chromeExtension(),
     // TODO? https://github.com/solidjs/solid-refresh
-    //simpleReloader(), // this will reload all tabs
+    simpleReloader(),
     // solidjs
     babel({
       extensions,
