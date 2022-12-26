@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "solidjs-tailwind-extension-boilerplate",
   "version": "0.0.1",
   "description": "A browser extension template built with SolidJS and TailwindCSS",
