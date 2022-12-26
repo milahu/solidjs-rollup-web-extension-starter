@@ -53,13 +53,14 @@ const solidOptions = {};
 const babelTargets = pkg.browserslist || "last 2 years";
 const babelOptions = {
   plugins: [
+    // windicss + styled-components
     "babel-plugin-styled-windicss",
   ]
 };
 
 //export default withSolid({
 export default ({
-  input: "src/manifest.json",
+  input: "manifest.js",
   output: {
     dir: "dist",
     format: "esm",

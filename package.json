@@ -18,10 +18,11 @@
     "dev": "rollup -c -w",
     "test": "jest --watch"
   },
-  "type": "module",
+  "type": "commonjs",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@crxjs/vite-plugin": "^1.0.14",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
@@ -41,6 +42,7 @@
     "rollup-plugin-windicss": "^1.8.10",
     "rollup-plugin-zip": "^1.0.3",
     "solid-js": "^1.6.6",
+    "vite": "^4.0.3",
     "windicss": "^3.5.6"
   }
 }
