@@ -1,0 +1,12 @@
+{
+  "json.schemas": [
+    {
+      // https://github.com/crxjs/chrome-extension-tools/discussions/79#discussioncomment-1202954
+      "fileMatch": ["manifest.json"],
+      "url": "https://raw.githubusercontent.com/extend-chrome/manifest-json-schema/main/schema/manifest.schema.json"
+    }
+  ],
+  "typescript.tsserver.watchOptions": {
+  
+  },
+}
