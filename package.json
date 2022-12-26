@@ -32,13 +32,9 @@
     "rollup": "^3.8.1",
     "rollup-plugin-chrome-extension": "^3.6.10",
     "rollup-plugin-empty-dir": "^1.0.5",
-    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-windicss": "^1.8.10",
     "rollup-plugin-zip": "^1.0.3",
-    "solid-js": "^1.6.6"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "solid-js": "^1.6.6",
+    "windicss": "^3.5.6"
   }
 }

@@ -2,7 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
 import zip from "rollup-plugin-zip";
-import postcss from "rollup-plugin-postcss";
+import WindiCSS from "rollup-plugin-windicss";
 import terser from "@rollup/plugin-terser";
 import {
   chromeExtension,
@@ -57,7 +57,9 @@ export default ({
       },
     }),
     */
-    postcss({ minimize: production }),
+    WindiCSS({
+      preflight: false,
+    }),
     // the plugins below are optional
     resolve({
       extensions,
