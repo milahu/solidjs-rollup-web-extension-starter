@@ -3,6 +3,7 @@
   "name": "solidjs-rollup-web-extension-starter",
   "version": "0.0.1.0",
   "description": "A browser extension template built with SolidJS and TailwindCSS",
+  "options_page": "src/pages/options/index.html",
   "background": {
     "service_worker": "src/pages/background/index.js"
   },

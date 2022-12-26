@@ -19,7 +19,7 @@ const manifest = (({
   name: pkg.displayName ?? pkg.name,
   version: `${major}.${minor}.${patch}.${label}`,
   description: pkg.description,
-  //options_page: "src/pages/options/index.html",
+  options_page: "src/pages/options/index.html",
   background: {
     service_worker: "src/pages/background/index.js",
   },
