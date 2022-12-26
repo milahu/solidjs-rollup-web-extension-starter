@@ -1,6 +1,5 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import svelte from "rollup-plugin-svelte";
 import zip from "rollup-plugin-zip";
 import WindiCSS from "rollup-plugin-windicss";
 import terser from "@rollup/plugin-terser";
