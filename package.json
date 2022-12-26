@@ -11,7 +11,7 @@
     "starter"
   ],
   "homepage": "https://github.com/milahu/solidjs-rollup-web-extension-starter",
-  "author": "Kyrell Dixon <kyrell@kyrelldixon.com>",
+  "author": "",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
