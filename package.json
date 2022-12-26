@@ -16,9 +16,10 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "build-manifest": "node manifest.write.js",
     "test": "jest --watch"
   },
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",

@@ -60,7 +60,9 @@ const babelOptions = {
 
 //export default withSolid({
 export default ({
-  input: "manifest.js",
+  // not working: workaround: manifest.write.js
+  //input: "manifest.js",
+  input: "manifest.json",
   output: {
     dir: "dist",
     format: "esm",
