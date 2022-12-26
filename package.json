@@ -8,6 +8,7 @@
     "javascript",
     "solidjs",
     "rollup",
+    "starter",
     "boilerplate"
   ],
   "homepage": "https://github.com/kyrelldixon/solidjs-tailwind-extension-boilerplate",
