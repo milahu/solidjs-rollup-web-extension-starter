@@ -1,23 +1,23 @@
 {
   "private": true,
-  "name": "svelte-tailwind-extension-boilerplate",
+  "name": "solidjs-tailwind-extension-boilerplate",
   "version": "0.0.1",
-  "description": "A browser extension template built with Svelte and TailwindCSS",
+  "description": "A browser extension template built with SolidJS and TailwindCSS",
   "keywords": [
     "chrome-extension",
     "web-extension",
     "javascript",
-    "svelte",
+    "solidjs",
     "rollup",
     "boilerplate"
   ],
-  "homepage": "https://github.com/kyrelldixon/svelte-tailwind-extension-boilerplate#readme",
+  "homepage": "https://github.com/kyrelldixon/solidjs-tailwind-extension-boilerplate#readme",
   "bugs": {
-    "url": "https://github.com/kyrelldixon/svelte-tailwind-extension-boilerplate/issues"
+    "url": "https://github.com/kyrelldixon/solidjs-tailwind-extension-boilerplate/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kyrelldixon/svelte-tailwind-extension-boilerplate.git"
+    "url": "git+https://github.com/kyrelldixon/solidjs-tailwind-extension-boilerplate.git"
   },
   "author": "Kyrell Dixon <kyrell@kyrelldixon.com>",
   "license": "MIT",
