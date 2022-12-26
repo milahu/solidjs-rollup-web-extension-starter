@@ -43,7 +43,8 @@ export default ({
       babelHelpers: "bundled",
       presets: [
         ["babel-preset-solid", solidOptions || {}],
-        "@babel/preset-typescript",
+        // typescript
+        //"@babel/preset-typescript",
         ["@babel/preset-env", { bugfixes: true, targets: babelTargets }],
       ],
       ...babelOptions,
