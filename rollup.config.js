@@ -9,11 +9,25 @@ import {
   simpleReloader,
 } from "rollup-plugin-chrome-extension";
 import { emptyDir } from "rollup-plugin-empty-dir";
-import withSolid from "rollup-preset-solid";
+//import withSolid from "rollup-preset-solid";
+import { babel } from "@rollup/plugin-babel";
+
+// ExperimentalWarning: Importing JSON modules is an experimental feature.
+//import pkg from "./package.json" assert { type: "json" };
+import fs from "fs";
+import path from "path";
+const pkg = JSON.parse(fs.readFileSync(path.resolve("./package.json"), "utf8"));
 
 const production = !process.env.ROLLUP_WATCH;
 
-export default withSolid({
+// https://github.com/solidjs-community/rollup-preset-solid
+const extensions = [".js", ".ts", ".jsx", ".tsx"];
+const solidOptions = {};
+const babelTargets = pkg.browserslist || "last 2 years";
+const babelOptions = {};
+
+//export default withSolid({
+export default ({
   input: "src/manifest.json",
   output: {
     dir: "dist",
@@ -22,7 +36,19 @@ export default withSolid({
   plugins: [
     // always put chromeExtension() before other plugins
     chromeExtension(),
-    simpleReloader(), // TODO? https://github.com/solidjs/solid-refresh
+    // TODO? https://github.com/solidjs/solid-refresh
+    simpleReloader(),
+    // solidjs
+    babel({
+      extensions,
+      babelHelpers: "bundled",
+      presets: [
+        ["babel-preset-solid", solidOptions || {}],
+        "@babel/preset-typescript",
+        ["@babel/preset-env", { bugfixes: true, targets: babelTargets }],
+      ],
+      ...babelOptions,
+    }),
     /*
     svelte({
       compilerOptions: {
@@ -30,14 +56,17 @@ export default withSolid({
         dev: !production,
       },
     }),
+    */
     postcss({ minimize: production }),
     // the plugins below are optional
     resolve({
-      dedupe: ["svelte"],
+      extensions,
+      dedupe: [
+        //"svelte"
+      ],
     }),
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     commonjs(),
-    */
     // Empties the output dir before a new build
     emptyDir(),
     // If we're building for production, minify

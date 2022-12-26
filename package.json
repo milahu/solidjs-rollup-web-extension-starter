@@ -30,6 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.2.1",
@@ -44,6 +45,7 @@
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-zip": "^1.0.3",
     "rollup-preset-solid": "^2.0.1",
+    "solid-js": "^1.6.6",
     "svelte-jester": "^2.3.2"
   },
   "dependencies": {
