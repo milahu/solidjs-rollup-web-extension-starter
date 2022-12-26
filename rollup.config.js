@@ -3,7 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
 import zip from "rollup-plugin-zip";
 import postcss from "rollup-plugin-postcss";
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 import {
   chromeExtension,
   simpleReloader,
