@@ -8,7 +8,7 @@ import {
   chromeExtension,
   simpleReloader,
 } from "rollup-plugin-chrome-extension";
-import { emptyDir } from "rollup-plugin-empty-dir";
+import emptyDir from "rollup-plugin-cleanup-dir";
 //import withSolid from "rollup-preset-solid";
 import { babel } from "@rollup/plugin-babel";
 // ExperimentalWarning: Importing JSON modules is an experimental feature.
