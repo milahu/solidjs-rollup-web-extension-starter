@@ -1,8 +1,5 @@
-import Popup from "./Popup.svelte";
-import "./tailwind.css";
+import { render } from "solid-js/web";
+import "./index.css";
+import Popup from "./Popup";
 
-const app = new Popup({
-  target: document.body,
-});
-
-export default app;
+render(Popup, document.body);
