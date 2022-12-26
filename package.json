@@ -44,7 +44,6 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-zip": "^1.0.3",
-    "rollup-preset-solid": "^2.0.1",
     "solid-js": "^1.6.6",
     "svelte-jester": "^2.3.2"
   },
