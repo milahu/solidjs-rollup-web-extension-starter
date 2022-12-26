@@ -1,5 +1,5 @@
 {
-  "name": "solidjs-tailwind-extension-boilerplate",
+  "name": "solidjs-tailwind-extension-starter",
   "version": "0.0.1",
   "description": "A browser extension template built with SolidJS and TailwindCSS",
   "keywords": [
@@ -9,9 +9,9 @@
     "solidjs",
     "rollup",
     "starter",
-    "boilerplate"
+    "starter"
   ],
-  "homepage": "https://github.com/kyrelldixon/solidjs-tailwind-extension-boilerplate",
+  "homepage": "https://github.com/kyrelldixon/solidjs-tailwind-extension-starter",
   "author": "Kyrell Dixon <kyrell@kyrelldixon.com>",
   "license": "MIT",
   "scripts": {
